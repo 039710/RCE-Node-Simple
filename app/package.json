@@ -1,0 +1,19 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "npx json-server --watch -p 9999 db.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.26.1",
+    "dotenv": "^8.6.0",
+    "express": "^4.17.3",
+    "json-server": "^0.17.0",
+    "swagger": "^0.7.5"
+  }
+}
