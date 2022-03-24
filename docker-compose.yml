@@ -1,0 +1,31 @@
+version: '3'
+
+services:
+  json-server:
+    container_name: json-server
+    build:
+      context: ./json-serverx
+      dockerfile: ./Dockerfile
+    ports:
+      - "9999:9999"
+    networks:
+      - rce-network
+    
+  simple-rce:
+    container_name: simple-rce
+    build: 
+      context: ./app
+      dockerfile: ./Dockerfile
+    ports:
+      - "${PORT}:9898"
+    env_file:
+      - .env
+    depends_on:
+      - json-server
+    networks:
+      - rce-network
+    tty: true
+    stdin_open: true
+networks:
+  rce-network:
+    driver: bridge
